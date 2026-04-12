@@ -1,8 +1,8 @@
-# PROJETO-FINAL-FIRMWARE-EMBARCADOS
+ PROJETO-FINAL-FIRMWARE-EMBARCADOS
 Documentação completa de um sistema embarcado para monitoramento e controle de uma estufa, utilizando a Franzininho WiFi LAB01.
-# 🌱 Sistema de Monitoramento e Controle de Estufa com ESP32
+Sistema de Monitoramento e Controle de Estufa com ESP32
 
-## 📌 Descrição
+Descrição
 
 Este projeto consiste no desenvolvimento de um sistema embarcado utilizando o ESP32 para monitoramento e controle de uma estufa. O sistema realiza a leitura de temperatura, umidade e luminosidade, exibindo os dados em um display OLED e permitindo interação com o usuário através de um menu.
 
@@ -10,31 +10,31 @@ Além disso, os dados coletados podem ser armazenados na memória interna do ESP
 
 ---
 
-## ⚙️ Funcionalidades
+Funcionalidades
 
 * 📡 Monitoramento em tempo real:
 
   * Temperatura e umidade (DHT11)
   * Luminosidade (LDR)
 
-* 📺 Interface com usuário:
+ Interface com usuário:
 
   * Exibição dos dados no display OLED (I2C)
   * Menu interativo para ajuste do setpoint
 
-* 🎛️ Controle:
+ Controle:
 
   * Ajuste do setpoint de temperatura
   * Ativação/desativação manual do sistema
 
-* 💾 Armazenamento:
+ Armazenamento:
 
   * Registro de dados em arquivo (`log.txt`) utilizando SPIFFS ou LittleFS
   * Leitura dos dados via terminal serial
 
 ---
 
-## 🧰 Hardware Utilizado
+ Hardware Utilizado
 
 * FRANZININHO WIFI LAB 
 * Sensor DHT11
@@ -44,7 +44,7 @@ Além disso, os dados coletados podem ser armazenados na memória interna do ESP
 ( TODOS RECURSOS SÃO INTEGRADOS DA PLACA)
 ---
 
-## 🏗️ Estrutura do Projeto
+ Estrutura do Projeto
 
 ```bash
 main/
@@ -61,9 +61,9 @@ components/
 
 ---
 
-## 🚀 Como Compilar e Executar
+ Como Compilar e Executar
 
-### 🔧 Pré-requisitos
+ Pré-requisitos
 
 * ESP-IDF instalado e configurado
 * Python configurado
@@ -71,7 +71,7 @@ components/
 
 ---
 
-### ▶️ Passos
+ Passos
 
 1. Clone o repositório:
 
@@ -86,7 +86,7 @@ cd seu-repositorio
 idf.py menuconfig
 ```
 
-👉 Aqui você pode configurar:
+ Aqui você pode configurar:
 
 * pinos dos sensores
 * parâmetros padrão
@@ -110,7 +110,7 @@ idf.py flash monitor
 
 ---
 
-## 🖥️ Uso do Sistema
+ Uso do Sistema
 
 * O display OLED mostra:
 
@@ -126,7 +126,7 @@ idf.py flash monitor
 
 ---
 
-## 📡 Comandos via Serial
+ Comandos via Serial
 
 Para acessar os dados armazenados:
 
@@ -134,11 +134,11 @@ Para acessar os dados armazenados:
 readlog
 ```
 
-👉 O sistema irá imprimir no terminal o conteúdo do arquivo `log.txt`.
+ O sistema irá imprimir no terminal o conteúdo do arquivo `log.txt`.
 
 ---
 
-## 💾 Armazenamento de Dados
+ Armazenamento de Dados
 
 Os dados são armazenados no sistema de arquivos (SPIFFS ou LittleFS) no arquivo:
 
@@ -147,7 +147,7 @@ Os dados são armazenados no sistema de arquivos (SPIFFS ou LittleFS) no arquivo
 ```
 
 
-## 🧠 Conceitos Aplicados
+ Conceitos Aplicados
 
 * Comunicação I2C (OLED)
 * Leitura ADC (LDR)
@@ -157,8 +157,7 @@ Os dados são armazenados no sistema de arquivos (SPIFFS ou LittleFS) no arquivo
 * Modularização com componentes (ESP-IDF)
 * Controle baseado em setpoint
 
-
-## ⚙️ Possíveis Melhorias
+ Possíveis Melhorias
 
 * Implementação de controle PID (Kp, Ki, Kd)
 * Interface web via Wi-Fi
@@ -167,9 +166,7 @@ Os dados são armazenados no sistema de arquivos (SPIFFS ou LittleFS) no arquivo
 * Gráficos em tempo real
 
 
-## 📷 Diagrama do Sistema
-
-Adicione aqui o diagrama de blocos do hardware:
+ Diagrama do Sistema
 
 
         +-------------+
@@ -180,7 +177,7 @@ Adicione aqui o diagrama de blocos do hardware:
    |           |           |
  DHT11       LDR        OLED
 (temp/umid)  (ADC)      (I2C)
-```
+
 
 
 
