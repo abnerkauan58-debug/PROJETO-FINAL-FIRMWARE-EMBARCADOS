@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
-
+#include <string.h>
 #include "dht.h"
 #include "ldr.h"
 #include "oled.h"
@@ -21,6 +21,18 @@ void app_main(void)
     menu_init();
     control_init();
 
+void check_serial(void)
+{
+    char cmd[20];
+
+    if (fgets(cmd, sizeof(cmd), stdin))
+    {
+        if (strncmp(cmd, "readlog", 7) == 0)
+        {
+            storage_read_log();
+        }
+    }
+}
     while (1)
     {
         dht_read(&temperature, &humidity);
@@ -39,4 +51,5 @@ void app_main(void)
 
         vTaskDelay(pdMS_TO_TICKS(2000));
     }
+    check_serial();
 }
